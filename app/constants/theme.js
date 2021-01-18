@@ -5,7 +5,7 @@ import { Platform } from 'react-native';
 
 export const COLORS = {
   // base colors
-  primary: '#fc1f4f', // orange
+  primary: '#F41646', // orange
   secondary: '#CDCDD2', // gray
 
   // colors

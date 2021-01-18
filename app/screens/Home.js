@@ -16,10 +16,10 @@ const Home = ({ navigation }) => {
   // Dummy Datas
 
   const initialCurrentLocation = {
-    streetName: 'NewYork, NY',
+    streetName: '25 Watchogue Rd',
     gps: {
-      latitude: 40.73061,
-      longitude: -73.935242,
+      latitude: 40.613302,
+      longitude: -74.132024,
     },
   };
 
@@ -91,8 +91,8 @@ const Home = ({ navigation }) => {
       photo: images.burger_restaurant_1,
       duration: '30 - 45 min',
       location: {
-        latitude: 1.5347282806345879,
-        longitude: 110.35632207358996,
+        latitude: 40.612645,
+        longitude: -74.129372,
       },
       courier: {
         avatar: images.avatar_1,
@@ -350,7 +350,7 @@ const Home = ({ navigation }) => {
 
   function renderHeader() {
     return (
-      <View style={{ flexDirection: 'row', height: 50 }}>
+      <View style={{ flexDirection: 'row', height: 40 }}>
         <TouchableOpacity
           style={{
             width: 50,
@@ -379,7 +379,7 @@ const Home = ({ navigation }) => {
               borderRadius: SIZES.radius,
             }}
           >
-            <Text style={{ ...FONTS.h3 }}>{currentLocation.streetName}</Text>
+            <Text style={{ ...FONTS.body4 }}>{currentLocation.streetName}</Text>
           </View>
         </View>
 

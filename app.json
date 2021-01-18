@@ -3,12 +3,12 @@
     "name": "fooder-app",
     "slug": "fooder-app",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/favicon.png",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#F41646"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,7 +20,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/favicon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#F41646"
       }
     },
     "web": {
