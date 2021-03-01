@@ -9,10 +9,10 @@ const Home = ({ navigation }) => {
   // Dummy Datas
 
   const initialCurrentLocation = {
-    streetName: '25 Watchogue Rd',
+    streetName: 'Stephanstraße 5',
     gps: {
-      latitude: 40.613302,
-      longitude: -74.132024,
+      latitude: 49.23866420006292,
+      longitude: 6.998251393993986,
     },
   };
 
@@ -101,8 +101,10 @@ const Home = ({ navigation }) => {
             padding: SIZES.padding,
             paddingBottom: SIZES.padding * 2,
             backgroundColor:
-              selectedCategory?.id == item.id ? COLORS.primary : COLORS.lightGray4,
+              selectedCategory?.id == item.id ? COLORS.primary : COLORS.white,
             borderRadius: SIZES.radius,
+            borderWidth: 0.4,
+            borderColor: COLORS.lightGray,
             alignItems: 'center',
             justifyContent: 'center',
             marginRight: SIZES.padding,
@@ -118,7 +120,7 @@ const Home = ({ navigation }) => {
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor:
-                selectedCategory?.id == item.id ? COLORS.white : COLORS.white,
+                selectedCategory?.id == item.id ? COLORS.white : COLORS.lightGray4,
             }}
           >
             <Image
@@ -134,8 +136,8 @@ const Home = ({ navigation }) => {
           <Text
             style={{
               marginTop: SIZES.padding,
-              color: selectedCategory?.id == item.id ? COLORS.white : COLORS.black,
-              fontWeight: selectedCategory?.id == item.id ? 'bold' : '',
+              color: selectedCategory?.id == item.id ? COLORS.white : COLORS.darkGray,
+              fontWeight: selectedCategory?.id == item.id ? 'bold' : 'normal',
               ...FONTS.body5,
             }}
           >
@@ -147,8 +149,8 @@ const Home = ({ navigation }) => {
 
     return (
       <View style={{ padding: SIZES.padding * 2 }}>
-        <Text style={{ ...FONTS.h1 }}>Main</Text>
-        <Text style={{ ...FONTS.h1 }}>Categories</Text>
+        <Text style={{ ...FONTS.h2, color: COLORS.darkGray }}>Main</Text>
+        <Text style={{ ...FONTS.h2, color: COLORS.darkGray }}>Categories</Text>
 
         <FlatList
           data={categories}
@@ -168,7 +170,7 @@ const Home = ({ navigation }) => {
         style={{
           marginBottom: SIZES.padding * 2,
           backgroundColor: COLORS.white,
-          borderWidth: 0.2,
+          borderWidth: 0.5,
           borderColor: COLORS.lightGray2,
           borderRadius: 10,
           padding: 15,
@@ -237,7 +239,9 @@ const Home = ({ navigation }) => {
               marginRight: 10,
             }}
           />
-          <Text style={{ ...FONTS.body3, fontWeight: 'bold' }}>{item.rating}</Text>
+          <Text style={{ ...FONTS.body3, fontWeight: 'bold', color: COLORS.darkGray }}>
+            {item.rating}
+          </Text>
 
           {/* Categories */}
           <View
@@ -249,7 +253,7 @@ const Home = ({ navigation }) => {
             {item.categories.map((categoryId) => {
               return (
                 <View style={{ flexDirection: 'row' }} key={categoryId}>
-                  <Text style={{ ...FONTS.body3 }}>
+                  <Text style={{ ...FONTS.body3, color: COLORS.darkGray }}>
                     {getCategoryNameById(categoryId)}
                   </Text>
                   <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}> . </Text>

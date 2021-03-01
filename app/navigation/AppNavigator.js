@@ -1,56 +1,23 @@
-import React, { useState } from 'react';
-import { View, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
-import { COLORS, icons } from '../constants';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Home, Welcome } from '../screens';
-import TabBarCustomButton from './TabBarCustomButton';
-import { isIphoneX } from 'react-native-iphone-x-helper';
-import LoginScreen from '../screens/LoginScreen';
-import RegisterScreen from '../screens/RegisterScreen';
+import React from 'react';
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import FeedNavigator from './FeedNavigator';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import routes from './routes';
+import { Home, ProfileScreen } from '../screens';
 import RecoveryScreen from '../screens/RecoveryScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import TabBarCustomButton from './TabBarCustomButton';
+import { Image } from 'react-native';
+import { COLORS, icons } from '../constants';
 
 const Tab = createBottomTabNavigator();
-
-const CustomTabBar = (props) => {
-  if (isIphoneX()) {
-    return (
-      <View>
-        <View
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: 30,
-            backgroundColor: COLORS.white,
-          }}
-        ></View>
-        <BottomTabBar {...props.props} />
-      </View>
-    );
-  } else {
-    return <BottomTabBar {...props.props} />;
-  }
-};
-
-const Tabs = () => {
+const AppNavigator = () => {
   return (
-    <Tab.Navigator
-      tabBarOptions={{
-        showLabel: false,
-        style: {
-          borderTopWidth: 1,
-          elevation: 0,
-          backgroundColor: 'transparent',
-        },
-      }}
-      tabBar={(props) => <CustomTabBar props={props} />}
-    >
+    <Tab.Navigator>
       <Tab.Screen
-        name='Home'
-        component={Home}
+        name='Feed'
+        component={FeedNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
@@ -84,8 +51,8 @@ const Tabs = () => {
           tabBarButton: (props) => <TabBarCustomButton {...props} />,
         }}
       />
-      <Tab.Screen
-        name='Like'
+      {/* <Tab.Screen
+        name='Home'
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => (
@@ -101,10 +68,10 @@ const Tabs = () => {
           ),
           tabBarButton: (props) => <TabBarCustomButton {...props} />,
         }}
-      />
+      /> */}
       <Tab.Screen
-        name='User'
-        component={Home}
+        name='Account'
+        component={RecoveryScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
@@ -124,4 +91,16 @@ const Tabs = () => {
   );
 };
 
-export default Tabs;
+export default AppNavigator;
+/*
+<Tab.Screen
+        name='ListingEdit'
+        component={ListingEditScreen}
+        options={({ navigation , route }) => ({
+          tabBarButton: () => (
+            <NewListingButton onPress={() => navigation.navigate(routes.LISTING_EDIT)} />
+          ),
+        })}
+/>
+
+*/

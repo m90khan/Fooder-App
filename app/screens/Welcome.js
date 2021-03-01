@@ -11,6 +11,7 @@ import {
 import Screen from '../components/Screen';
 import Button from '../components/Button';
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
+import routes from '../navigation/routes';
 
 const Welcome = ({ navigation }) => {
   return (
@@ -23,7 +24,14 @@ const Welcome = ({ navigation }) => {
           height: 500,
         }}
       />
-      <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <View
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: SIZES.padding2,
+        }}
+      >
         <Text style={{ ...FONTS.h1, color: COLORS.darkGray, fontWeight: 'bold' }}>
           Good Fresh Food
         </Text>
@@ -48,7 +56,11 @@ const Welcome = ({ navigation }) => {
           justifyContent: 'center',
         }}
       >
-        <Button title='Get Started' onPress={() => navigation.navigate('Home')} />
+        <Button
+          title='Get Started'
+          color='primary'
+          onPress={() => navigation.navigate('Feed')}
+        />
       </View>
     </View>
   );

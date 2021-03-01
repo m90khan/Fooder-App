@@ -174,9 +174,10 @@ const Restaurant = ({ route, navigation }) => {
                   underlayColor={COLORS.lightGray}
                   style={{
                     width: 50,
-                    backgroundColor: COLORS.white,
+                    backgroundColor: COLORS.lightGray3,
                     alignItems: 'center',
                     justifyContent: 'center',
+
                     borderTopLeftRadius: 25,
                     borderBottomLeftRadius: 25,
                     height: 50,
@@ -189,7 +190,7 @@ const Restaurant = ({ route, navigation }) => {
                 <View
                   style={{
                     width: 50,
-                    backgroundColor: COLORS.white,
+                    backgroundColor: COLORS.lightGray4,
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}
@@ -202,7 +203,7 @@ const Restaurant = ({ route, navigation }) => {
                   underlayColor={COLORS.lightGray}
                   style={{
                     width: 50,
-                    backgroundColor: COLORS.white,
+                    backgroundColor: COLORS.lightGray3,
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: 50,
@@ -226,10 +227,19 @@ const Restaurant = ({ route, navigation }) => {
                 paddingHorizontal: SIZES.padding * 2,
               }}
             >
-              <Text style={{ marginVertical: 10, textAlign: 'center', ...FONTS.h2 }}>
+              <Text
+                style={{
+                  marginVertical: 10,
+                  textAlign: 'center',
+                  ...FONTS.h2,
+                  color: COLORS.darkGray,
+                }}
+              >
                 {item.name} - ${item.price.toFixed(2)}
               </Text>
-              <Text style={{ ...FONTS.body3 }}>{item.description}</Text>
+              <Text style={{ ...FONTS.body3, color: COLORS.darkGray }}>
+                {item.description}
+              </Text>
             </View>
 
             {/* Calories */}
@@ -251,7 +261,7 @@ const Restaurant = ({ route, navigation }) => {
               <Text
                 style={{
                   ...FONTS.body3,
-                  color: COLORS.darygray,
+                  color: COLORS.lightGray,
                 }}
               >
                 {item.calories.toFixed(2)} cal
@@ -320,9 +330,10 @@ const Restaurant = ({ route, navigation }) => {
         {renderDots()}
         <View
           style={{
-            backgroundColor: COLORS.white,
+            backgroundColor: COLORS.lightGray3,
             borderTopLeftRadius: 40,
             borderTopRightRadius: 40,
+            borderColor: COLORS.lightGray,
           }}
         >
           <View
@@ -402,6 +413,7 @@ const Restaurant = ({ route, navigation }) => {
           >
             <Button
               title='Order'
+              color='primary'
               onPress={() =>
                 navigation.navigate('OrderDelivery', {
                   restaurant: restaurant,
@@ -439,7 +451,7 @@ const Restaurant = ({ route, navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.lightGray4,
+    backgroundColor: COLORS.white,
   },
 });
 
