@@ -23,8 +23,10 @@ export const basket = require('../../assets/icons/shopping-basket.png');
 export const star = require('../../assets/icons/star.png');
 export const sushi = require('../../assets/icons/sushi.png');
 export const user = require('../../assets/icons/user.png');
+export const user2 = require('../../assets/icons/2user.png');
 
 export default {
+  user2,
   back,
   car,
   cutlery,

@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { isIphoneX } from 'react-native-iphone-x-helper';
+import Button from '../components/Button';
+import Icon from '../components/Icon';
 import Screen from '../components/Screen';
 
 import { icons, COLORS, SIZES, FONTS } from '../constants';
@@ -126,22 +128,7 @@ const Restaurant = ({ route, navigation }) => {
           </View>
         </View>
 
-        <TouchableOpacity
-          style={{
-            width: 50,
-            paddingRight: SIZES.padding * 2,
-            justifyContent: 'center',
-          }}
-        >
-          <Image
-            source={icons.list}
-            resizeMode='contain'
-            style={{
-              width: 25,
-              height: 25,
-            }}
-          />
-        </TouchableOpacity>
+        <Icon onPress={() => console.log('menu')} source={icons.list} />
       </View>
     );
   }
@@ -413,23 +400,15 @@ const Restaurant = ({ route, navigation }) => {
               justifyContent: 'center',
             }}
           >
-            <TouchableOpacity
-              style={{
-                width: SIZES.width * 0.9,
-                padding: SIZES.padding,
-                backgroundColor: COLORS.primary,
-                alignItems: 'center',
-                borderRadius: SIZES.radius,
-              }}
+            <Button
+              title='Order'
               onPress={() =>
                 navigation.navigate('OrderDelivery', {
                   restaurant: restaurant,
                   currentLocation: currentLocation,
                 })
               }
-            >
-              <Text style={{ color: COLORS.white, ...FONTS.h2 }}>Order</Text>
-            </TouchableOpacity>
+            />
           </View>
         </View>
 
@@ -460,7 +439,7 @@ const Restaurant = ({ route, navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.lightGray2,
+    backgroundColor: COLORS.lightGray4,
   },
 });
 

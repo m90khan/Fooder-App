@@ -1,3 +1,5 @@
+import { icons, images, SIZES, COLORS, FONTS } from '../constants';
+
 const affordable = 1;
 const expensive = 3;
 const fairPrice = 2;
@@ -12,8 +14,8 @@ const restaurantData = [
     photo: images.burger_restaurant_1,
     duration: '30 - 45 min',
     location: {
-      latitude: 1.5347282806345879,
-      longitude: 110.35632207358996,
+      latitude: 40.612645,
+      longitude: -74.129372,
     },
     courier: {
       avatar: images.avatar_1,
@@ -247,4 +249,4 @@ const restaurantData = [
   },
 ];
 
-export { restaurantData, fairPrice, affordable, expensive };
+export default restaurantData;

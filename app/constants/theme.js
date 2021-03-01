@@ -5,17 +5,17 @@ import { Platform } from 'react-native';
 
 export const COLORS = {
   // base colors
-  primary: '#F41646', // orange
-  secondary: '#CDCDD2', // gray
+  primary: '#1FCC79', // orange
+  secondary: '#FF6464', // gray
 
   // colors
   black: '#1E1F20',
   white: '#FFFFFF',
-
-  lightGray: '#F5F5F6',
-  lightGray2: '#F6F6F7',
-  lightGray3: '#EFEFF1',
-  lightGray4: '#F8F8F9',
+  darkGray: '#2E3E5C',
+  lightGray: '#9FA5C0',
+  lightGray2: '#D0DBEA',
+  lightGray3: '#F4F5F7',
+  lightGray4: '#ededee',
   transparent: 'transparent',
   darkgray: '#898C95',
 };

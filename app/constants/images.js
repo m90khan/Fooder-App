@@ -28,7 +28,10 @@ const sushi = require('../../assets/images/sushi.jpg');
 const teh_c_peng = require('../../assets/images/teh-c-peng.jpg');
 const tomato_pasta = require('../../assets/images/tomato-pasta.jpg');
 
+const welcomeImage = require('../../assets/intro/onboarding.png');
+
 export default {
+  welcomeImage,
   avatar_1,
   avatar_2,
   avatar_3,

@@ -1,4 +1,4 @@
-import { icons } from './../../app/constants';
+import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 
 const categoryData = [
   {
