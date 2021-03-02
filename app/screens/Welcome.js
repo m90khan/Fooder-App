@@ -59,7 +59,7 @@ const Welcome = ({ navigation }) => {
         <Button
           title='Get Started'
           color='primary'
-          onPress={() => navigation.navigate('Feed')}
+          onPress={() => navigation.navigate('Home')}
         />
       </View>
     </View>

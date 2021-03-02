@@ -3,15 +3,36 @@ import { StyleSheet, Image, Text, View } from 'react-native';
 import * as Yup from 'yup';
 
 import Screen from '../components/Screen';
-import { Form, FormField, SubmitButton, ErrorMessage } from '../components/forms';
 import Button from '../components/Button';
 import { COLORS, FONTS, images, SIZES } from '../constants';
+import ListItem from '../components/lists/ListItem';
+import { FlatList } from 'react-native-gesture-handler';
+import ListItemSeparator from '../components/lists/ListItemSeparator';
+import Icon from '../components/Icon';
+import IconList from '../components/IconList';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
   password: Yup.string().required().min(4).label('Password'),
 });
-
+const menuItems = [
+  {
+    title: 'Orders',
+    icon: {
+      name: 'order-bool-descending-variant',
+      backgroundColor: COLORS.darkGray,
+    },
+    targetScreen: 'Listings',
+  },
+  {
+    title: 'Messages',
+    icon: {
+      name: 'email',
+      backgroundColor: COLORS.darkGray,
+    },
+    targetScreen: '',
+  },
+];
 function ProfileScreen(props) {
   const [loginFailed, setLoginFailed] = useState(false);
 
@@ -58,6 +79,7 @@ function ProfileScreen(props) {
             style={{
               ...FONTS.body3,
               color: COLORS.secondary,
+              fontWeight: 'bold',
               padding: SIZES.padding,
             }}
           >
@@ -65,58 +87,39 @@ function ProfileScreen(props) {
           </Text>
         </View>
       </View>
-
-      <Form
-        initialValues={{ email: '', password: '' }}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-      >
-        <ErrorMessage error='Invalid email or password.' visible={loginFailed} />
-        <FormField
-          autoCapitalize='none'
-          autoCorrect={false}
-          icon='email-outline'
-          keyboardType='email-address'
-          name='email'
-          placeholder='Email'
-          textContentType='emailAddress'
-        />
-        <FormField
-          autoCapitalize='none'
-          autoCorrect={false}
-          icon='lock-outline'
-          name='password'
-          placeholder='Password'
-          secureTextEntry
-          textContentType='password'
-        />
-        <Text style={{ paddingTop: 20, paddingBottom: 60, paddingLeft: 10 }}>
-          Forgot Password?{' '}
-        </Text>
-        <SubmitButton title='Login' color='primary' />
-      </Form>
-
       <View>
-        <Text style={{ padding: 10, color: COLORS.lightGray, textAlign: 'center' }}>
-          Or continue with
-        </Text>
-        <Button
-          title=' Google'
-          color='secondary'
-          icon='google'
-          onPress={() => console.log('google')}
+        <ListItem
+          title={'JamesX'}
+          subTitle={'jamesk@gmail.com'}
+          image={
+            'https://res.cloudinary.com/m90khan/image/upload/v1614076029/AirHouse/Users/user-1_j3zuy0.png'
+          }
         />
-        <Text style={{ padding: 10 }}>
-          Don't have any account?
-          <Text
-            style={{ color: COLORS.primary, fontWeight: 'bold' }}
-            onPress={() => navigation.navigate('Register')}
-          >
-            {' '}
-            Sign Up
-          </Text>
-        </Text>
       </View>
+      <View>
+        <FlatList
+          data={menuItems}
+          keyExtractor={(menuItem) => menuItem.title}
+          ItemSeparatorComponent={ListItemSeparator}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              IconComponent={
+                <IconList
+                  name={item.icon.name}
+                  backgroundColor={item.icon.backgroundColor}
+                />
+              }
+              onPress={() => navigation.navigate(item.targetScreen)}
+            />
+          )}
+        />
+      </View>
+      <ListItem
+        title='Log Out'
+        IconComponent={<IconList name='logout' backgroundColor={COLORS.darkGray} />}
+        onPress={() => logOut()}
+      />
     </View>
   );
 }
@@ -125,8 +128,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     backgroundColor: COLORS.white,
+    paddingTop: 50,
     flex: 1,
-    paddingTop: 100,
   },
   logo: {
     width: 80,

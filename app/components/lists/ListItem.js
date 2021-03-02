@@ -1,10 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
+import { View, StyleSheet, Image, TouchableHighlight, Text } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 
-import Text from '../Text';
-import colors from '../../config/colors';
 import { COLORS } from '../../constants';
 
 function ListItem({
@@ -31,7 +29,11 @@ function ListItem({
               </Text>
             )}
           </View>
-          <MaterialCommunityIcons color={colors.medium} name='chevron-right' size={25} />
+          <MaterialCommunityIcons
+            color={COLORS.darkGray}
+            name='chevron-right'
+            size={25}
+          />
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     padding: 15,
-    backgroundColor: colors.white,
+    backgroundColor: COLORS.white,
   },
   detailsContainer: {
     flex: 1,
@@ -56,10 +58,11 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   subTitle: {
-    color: colors.medium,
+    color: COLORS.primary,
   },
   title: {
-    fontWeight: '500',
+    fontWeight: 'bold',
+    color: COLORS.darkGray,
   },
 });
 

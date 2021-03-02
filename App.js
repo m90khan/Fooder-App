@@ -15,23 +15,22 @@ export default function App() {
   const [user, setUser] = useState();
 
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator
-    //     screenOptions={{ headerShown: false }}
-    //     initialRouteName={'RecoverPassword'}
-    //   >
-    //     <Stack.Screen name='Welcome' component={Welcome} />
-
-    //     <Stack.Screen name='Home' component={Tabs} />
-    //     <Stack.Screen name='Restaurant' component={Restaurant} />
-    //     <Stack.Screen name='OrderDelivery' component={OrderDelivery} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-    <NavigationContainer ref={navigationRef}>
-      <Stack.Screen name='Welcome' component={Welcome} />
-
-      {user ? <AppNavigator /> : <AuthNavigator />}
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName={'Welcome'}
+      >
+        <Stack.Screen name='Welcome' component={Welcome} />
+        <Stack.Screen name='Home' component={Tabs} />
+        <Stack.Screen name='Restaurant' component={Restaurant} />
+        <Stack.Screen name='OrderDelivery' component={OrderDelivery} />
+      </Stack.Navigator>
     </NavigationContainer>
+    // <NavigationContainer ref={navigationRef}>
+    //   <Stack.Screen name='Welcome' component={Welcome} />
+
+    //   {user ? <AppNavigator /> : <AuthNavigator />}
+    // </NavigationContainer>
   );
 }
 
