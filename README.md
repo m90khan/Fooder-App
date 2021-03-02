@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://expo.io/accounts/m90khan/projects/fooder-app">
-    <img src="./src/assets/img/clock.svg" alt="Logo" width="120" height="120">
+    <img src="./assets/icon.png" alt="Logo" width="120" height="120">
   </a>
 
   <h3 align="center">Fooder | Food Delivery app </h3>
@@ -31,6 +31,7 @@ Order food online <br />
 ### About the Project
 
 https://expo.io/accounts/m90khan/projects/fooder-app
+
 <img src="./assets/Fooder-cover.jpg">
 
 #### Process
