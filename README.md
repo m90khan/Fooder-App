@@ -32,7 +32,7 @@ Order food online <br />
 
 https://expo.io/accounts/m90khan/projects/fooder-app
 
-<img src="./assets/Fooder-cover.jpg">
+<img src="./assets/Fooder-Cover.jpg">
 
 #### Process
 
