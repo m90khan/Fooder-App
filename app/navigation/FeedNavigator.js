@@ -7,10 +7,12 @@ const Stack = createStackNavigator();
 
 const FeedNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigatorc>
+      <Stack.Screen name='Welcome' component={Welcome} options={{ headerShown: false }} />
+
       <Stack.Screen name='Home' component={Home} />
       <Stack.Screen name='Restaurant' component={Restaurant} />
-    </Stack.Navigator>
+    </Stack.Navigatorc>
   );
 };
 
