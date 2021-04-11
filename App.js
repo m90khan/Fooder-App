@@ -28,7 +28,6 @@ export default function App() {
     </NavigationContainer>
     // <NavigationContainer ref={navigationRef}>
     //   <Stack.Screen name='Welcome' component={Welcome} />
-
     //   {user ? <AppNavigator /> : <AuthNavigator />}
     // </NavigationContainer>
   );
